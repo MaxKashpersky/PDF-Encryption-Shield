@@ -5,194 +5,199 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)
 
-A professional Python application for securing PDF documents through encryption and decryption with password protection. Built with PyPDF2 for reliable PDF manipulation.
+A professional Python application for securing PDF documents through encryption and decryption with password protection. Built with **PyPDF2** for reliable PDF manipulation.
+
+---
 
 ## 📋 Table of Contents
+- [Features](#-features)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Technical Details](#-technical-details)
+- [Project Structure](#-project-structure)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Support](#-support)
 
-- [Features](#features-)
-- [Installation](#installation-)
-- [Usage](#usage-)
-- [Screenshots](#screenshots-)
-- [Technical Details](#technical-details-)
-- [Project Structure](#project-structure-)
-- [Contributing](#contributing-)
-- [License](#license-)
-- [Support](#support-)
+---
 
-## Features ✨
+## ✨ Features
+- 🔐 PDF Encryption — Add strong password protection to PDF files  
+- 🔓 PDF Decryption — Remove password protection from encrypted PDFs  
+- 🛡️ Security Focused — Uses standard PDF encryption algorithms  
+- 💻 User-Friendly CLI — Clean command-line interface with input validation  
+- 🚀 Lightweight — Minimal dependencies  
+- 📁 File Safety — Original files stay untouched  
 
-- **🔐 PDF Encryption** - Add strong password protection to PDF files
-- **🔓 PDF Decryption** - Remove password protection from encrypted PDFs
-- **🛡️ Security Focused** - Uses standard PDF encryption algorithms
-- **💻 User-Friendly CLI** - Clean command-line interface with comprehensive input validation
-- **🚀 Lightweight** - Minimal dependencies, fast performance
-- **📁 File Safety** - Preserves original files, creates new encrypted/decrypted copies
+---
 
-## Installation 📦
+## 📦 Installation
 
 ### Prerequisites
-- Python 3.8 or higher
-- pip (Python package manager)
+- Python 3.8+
+- pip
 
 ### Quick Setup
 
-1. **Clone the repository:**
+Clone the repository:
+
 ```bash
 git clone https://github.com/MaxKashpersky/PDF-Encryption-Shield.git
 cd PDF-Encryption-Shield
+```
+
 Install dependencies:
 
-bash
-pip install PyPDF2
-Or use the requirements file:
+    pip install PyPDF2
 
-bash
-pip install -r requirements.txt
-Usage 🚀
+Or install from requirements:
+
+    pip install -r requirements.txt
+
+---
+
+## 🚀 Usage
+
 Run the application:
 
-bash
-python main.py
-Application Workflow
-Main Menu:
-text
-==================================================
-          PDF ENCRYPTION/DECRYPTION TOOL
-==================================================
-1. Encrypt PDF (Add password protection)
-2. Decrypt PDF (Remove password protection)
-3. Exit
-==================================================
-Encrypting a PDF File:
-Choose option 1 from the menu
+    python main.py
 
-Enter the path to your PDF file
+### Application Workflow
 
-Set a strong password (minimum 3 characters)
+**Main Menu**
 
-Specify output filename
+    ==================================================
+              PDF ENCRYPTION/DECRYPTION TOOL
+    ==================================================
+    1. Encrypt PDF (Add password protection)
+    2. Decrypt PDF (Remove password protection)
+    3. Exit
+    ==================================================
 
-The encrypted file will be created with password protection
+### 🔐 Encrypting a PDF File
+1. Choose option 1  
+2. Enter path to the PDF  
+3. Set password (min 3 chars)  
+4. Choose output filename  
+5. Encrypted file is created  
 
-Decrypting a PDF File:
-Choose option 2 from the menu
+### 🔓 Decrypting a PDF File
+1. Choose option 2  
+2. Enter path to encrypted PDF  
+3. Enter password  
+4. Choose output filename  
+5. Decrypted file is created  
 
-Enter the path to the encrypted PDF
+---
 
-Provide the correct password
+## 📘 Example Session
 
-Specify output filename for the decrypted version
+    $ python main.py
 
-The decrypted file will be created without password protection
+    Welcome to the PDF Security Tool!
 
-Example Session
-bash
-$ python main.py
+    ==================================================
+              PDF ENCRYPTION/DECRYPTION TOOL
+    ==================================================
+    1. Encrypt PDF (Add password protection)
+    2. Decrypt PDF (Remove password protection)
+    3. Exit
+    ==================================================
 
-Welcome to the PDF Security Tool!
+    Please choose an option (1-3): 1
 
-==================================================
-          PDF ENCRYPTION/DECRYPTION TOOL
-==================================================
-1. Encrypt PDF (Add password protection)
-2. Decrypt PDF (Remove password protection)
-3. Exit
-==================================================
+    === PDF Encryption ===
+    Enter the path to the PDF file to encrypt: confidential.pdf
+    Enter encryption password: ********
+    Enter name for the encrypted file (without extension): secured_document
 
-Please choose an option (1-3): 1
+    ✅ Success! Encrypted file 'secured_document.pdf' created with password protection.
 
-=== PDF Encryption ===
-Enter the path to the PDF file to encrypt: confidential.pdf
-Enter encryption password: ********
-Enter name for the encrypted file (without extension): secured_document
+---
 
-✅ Success! Encrypted file 'secured_document.pdf' created with password protection.
-Screenshots 📸
-(You can add screenshots of your application interface here)
 
-Technical Details 🔧
-Library: PyPDF2 3.0.0+
+## 🔧 Technical Details
+- Library: PyPDF2 3.0.0+  
+- Encryption: RC4 or AES  
+- PDF Compatibility: PDF 1.4–1.7  
+- Validation: Checks for file existence, file extension, password  
+- Error Handling: User-friendly messages  
+- Output: Creates new files without touching originals  
 
-Encryption: Standard PDF encryption (RC4 or AES)
+---
 
-Compatibility: Works with PDF 1.4-1.7 specifications
+## 📁 Project Structure
 
-Input Validation: Comprehensive file existence, format, and password checks
+    PDF-Encryption-Shield/
+    ├── main.py                 # Main application entry point
+    ├── README.md              # Documentation
+    ├── .gitignore             # Git ignore rules
+    └── requirements.txt       # Dependencies
 
-Error Handling: Robust exception handling with user-friendly messages
+### Key Functions
+- encrypt_pdf() — performs PDF encryption  
+- decrypt_pdf() — decrypts password-protected PDFs  
+- display_menu() — CLI menu  
+- main() — application workflow  
 
-Output: Creates new files while preserving originals
+---
 
-Project Structure 📁
-text
-PDF-Encryption-Shield/
-├── main.py                 # Main application entry point
-├── README.md              # Project documentation
-├── .gitignore            # Git ignore rules
-└── requirements.txt      # Python dependencies
-Key Functions:
-encrypt_pdf() - Handles PDF encryption with password
+## 🤝 Contributing
 
-decrypt_pdf() - Manages PDF decryption process
+1. Fork the repository  
+2. Create a new branch:
 
-display_menu() - Shows user interface menu
+        git checkout -b feature/YourFeature
 
-main() - Application controller and workflow manager
+3. Commit changes:
 
-Contributing 🤝
-We welcome contributions! Please follow these steps:
+        git commit -m "Add YourFeature"
 
-Fork the repository
+4. Push branch:
 
-Create a feature branch: git checkout -b feature/YourFeature
+        git push origin feature/YourFeature
 
-Commit your changes: git commit -m 'Add YourFeature'
+5. Open a Pull Request  
 
-Push to the branch: git push origin feature/YourFeature
+### Development Setup
 
-Open a Pull Request
+        git clone https://github.com/MaxKashpersky/PDF-Encryption-Shield.git
+        cd PDF-Encryption-Shield
+        python -m venv .venv
+        source .venv/bin/activate      # On Windows: .venv\Scripts\activate
+        pip install -r requirements.txt
 
-Development Setup:
-bash
-git clone https://github.com/MaxKashpersky/PDF-Encryption-Shield.git
-cd PDF-Encryption-Shield
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-License 📄
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
 
-Author 👨‍💻
-Max Kashpersky
+## 📄 License
+This project is licensed under the MIT License.  
+See the LICENSE file for details.
 
-GitHub: @MaxKashpersky
+---
 
-Email: 220718354+MaxKashpersky@users.noreply.github.com
+## 👨‍💻 Author
+**Max Kashpersky**  
+GitHub: @MaxKashpersky  
+Email: 220718354+MaxKashpersky@users.noreply.github.com  
 
-Created as part of my software development and testing portfolio.
+---
 
-Support 💬
+## 💬 Support
 If you need help or found a bug:
 
-Check existing Issues
+- Check Issues
+- Create a new Issue describing:
+  - Problem
+  - Steps to reproduce
+  - Expected behavior
+  - Actual behavior  
 
-Create a New Issue with:
+---
 
-Detailed description
+## ⚠️ Legal Disclaimer
+This tool is intended only for legal and authorized use.  
+Users must comply with all laws and ensure they own or have rights to the files.
 
-Steps to reproduce
+---
 
-Expected vs actual behavior
-
-⚠️ Legal Disclaimer
-This tool is designed for legitimate purposes such as:
-
-Protecting personal documents
-
-Securing sensitive business files
-
-Educational and learning purposes
-
-Users are responsible for ensuring they have proper authorization to encrypt/decrypt any files and must comply with all applicable laws and copyright regulations.
-
-⭐ If you find this project useful, please give it a star on GitHub!
+⭐ If you find this project useful — please star it on GitHub!
